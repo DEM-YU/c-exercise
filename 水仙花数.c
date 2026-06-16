@@ -10,11 +10,29 @@ int main()
     {
         start *= 10;
     }
-    int end = start - 1;
+    int end = start * 10;
 
-    for (int num = start; num < start; num++)
+    for (int num = start; num < end; num++)
     {
-    }
+        int temp = num;
+        int sum = 0;
 
+        while (temp > 0)
+        {
+            int digit = temp % 10;
+
+            int mi = 1;
+            for (int i = 0; i < n; i++)
+            {
+                mi *= digit;
+            }
+            sum += mi;
+            temp = temp / 10;
+        }
+        if (sum == num)
+        {
+            printf("%d \n", num);
+        }
+    }
     return 0;
 }
